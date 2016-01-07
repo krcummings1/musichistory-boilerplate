@@ -32,15 +32,19 @@
 	<section>
 		<article>
 			Song length:
+			<br><input type="range" /></br>
 		</article>
 		<article>
 			Artist:
-				<select name="Options">
+				<select name="Artists">
+  					<option value="Options">
+  						Options
+  					</option>				
   					<option value="Lady Gaga">
   						Lady Gaga
   					</option>
-					<option value="Young The Giant">
-						Young The Giant
+					<option value="Young the Giant">
+						Young the Giant
 					</option>
 					<option value="Kings of Leon">
 						Kings of Leon
@@ -54,10 +58,63 @@
 				</select>
 		</article>
 		<article>
-			Genre:
+			Album:
+				<select name="Albums">
+					<option value="Options">
+						Options
+					</option>
+					<option value="Artpop">
+						Artpop
+					</option>
+					<option value="Young the Giant">
+						Young the Giant
+					</option>
+					<option value="Mechanical Bull">
+						Mechanical Bull
+					</option>
+					<option value="Songs About Jane">
+						Songs About Jane
+					</option>
+					<option value="Teenage Dream">
+						Teenage Dream
+					</option>
+				</select>
 		</article>
-	<button id="filterButton">Filter</button>
+		<article>
+			Genre:
+				<form method="post">
+        			<!-- <fieldset> -->
+                        <input type="checkbox" name="genre" value="Rock" />Rock <br />
+                        <input type="checkbox" name="genre" value="Pop" />Pop<br />
+                        <input type="checkbox" name="genre" value="Blues" />Blues<br />
+                        <input type="checkbox" name="genre" value="Classical" />Classical <br />
+                        <input type="checkbox" name="genre" value="Jazz" />Jazz<br />
+                        <input type="checkbox" name="genre" value="Hip Hop" />Hip Hop<br />
+                        <input type="submit" value="Filter"/>
+        <!-- </fieldset> -->
+</form>
+		</article>
+	<!-- <button id="filterButton">Filter</button> -->
 	</section>
+
+	<div>
+		<div>
+		  <h3>Gypsy</h3>
+		  <p>Lady Gaga | Artpop | Pop</p>
+		</div>
+		<div>
+		  <h3>Strings</h3>
+		  <p>Young the Giant | Young the Giant | Pop</p>
+		</div>
+		<div>
+		  <h3>Beautiful War</h3>
+		  <p>Kings of Leon | Mechanical Bull | Rock</p>
+		</div>
+		<div>
+		  <h3>She Will Be Loved</h3>
+		  <p>Maroon 5 | Songs About Jane | Pop</p>
+		</div>
+	</div>
 
 </body>
 </html>
