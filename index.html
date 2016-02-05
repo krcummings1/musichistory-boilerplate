@@ -8,114 +8,161 @@
 </head>
 
 <body>
+	<div id="container">
+	<!-- navigation -->
+		<nav>
+			<ul class="nav">	
+				<li class="link--listmusic">
+					<a href="#" id="link-list">
+						List Music
+					</a>
+				</li>
+				<li class="link--addmusic">
+					<a href="#" id="link-add">
+					Add Music
+					</a>
+				</li>
+				<li class="link--profile">
+					<a href="#" id="link-profile">
+					Profile
+					</a>
+				</li>
+			</ul>	
+		</nav>
 
-	<nav>
-		<ul class="nav">	
-			<li class="link--viewmusic">
-				<a href="#">
-					View Music
-				</a>
-			</li>
-			<li class="link--addmusic">
-				<a href="#">
-				Add Music
-				</a>
-			</li>
-			<li class="link--profile">
-				<a href="#">
-				Profile
-				</a>
-			</li>
-		</ul>	
-	</nav>
 
-	<section class="bluebox">
-		<article>
-			Song length:
-			<br><input type="range" /></br>
-		</article>
-		<article>
-			Artist: <br>
-				<select name="Artists">
-  					<option value="Options">
-  						Options
-  					</option>				
-  					<option value="Lady Gaga">
-  						Lady Gaga
-  					</option>
-					<option value="Young the Giant">
-						Young the Giant
-					</option>
-					<option value="Kings of Leon">
-						Kings of Leon
-					</option>
-					<option value="Maroon 5">
-						Maroon 5
-					</option>
-					<option value="Katy Perry">
-						Katy Perry
-					</option>
-				</select>
-		</article>
-		<article>
-			Album: <br>
-				<select name="Albums">
-					<option value="Options">
-						Options
-					</option>
-					<option value="Artpop">
-						Artpop
-					</option>
-					<option value="Young the Giant">
-						Young the Giant
-					</option>
-					<option value="Mechanical Bull">
-						Mechanical Bull
-					</option>
-					<option value="Songs About Jane">
-						Songs About Jane
-					</option>
-					<option value="Teenage Dream">
-						Teenage Dream
-					</option>
-				</select>
-		</article>
-		<article>
-			Genre:
-				<form method="post">
-        			<!-- <fieldset> -->
-                        <input type="checkbox" name="genre" value="Rock" />Rock <br />
-                        <input type="checkbox" name="genre" value="Pop" />Pop<br />
-                        <input type="checkbox" name="genre" value="Blues" />Blues<br />
-                        <input type="checkbox" name="genre" value="Classical" />Classical <br />
-                        <input type="checkbox" name="genre" value="Jazz" />Jazz<br />
-                        <input type="checkbox" name="genre" value="Hip Hop" />Hip Hop<br />
-                        <input type="submit" value="Filter"/>
-        <!-- </fieldset> -->
-</form>
-		</article>
-	</section>
 
-	<section class="songs">
-	<div>
-		<div>
-		  <h3>Gypsy</h3>
-		  <p>Lady Gaga | Artpop | Pop</p>
+
+<!-- list music view / main page -->
+	<section id="list-view">
+		<section class="bluebox">
+			<article>
+				Song length:
+				<br><input type="range" /></br>
+			</article>
+			<article>
+				Artist: <br>
+					<select name="Artists">
+	  					<option value="Options">
+	  						Options
+	  					</option>				
+	  					<option value="Lady Gaga">
+	  						Lady Gaga
+	  					</option>
+						<option value="Young the Giant">
+							Young the Giant
+						</option>
+						<option value="Kings of Leon">
+							Kings of Leon
+						</option>
+						<option value="Maroon 5">
+							Maroon 5
+						</option>
+						<option value="Katy Perry">
+							Katy Perry
+						</option>
+					</select>
+			</article>
+			<article>
+				Album: <br>
+					<select name="Albums">
+					<!-- selection disabled options -->
+						<option value="Options">
+							Options
+						</option>
+						<option value="Artpop">
+							Artpop
+						</option>
+						<option value="Young the Giant">
+							Young the Giant
+						</option>
+						<option value="Mechanical Bull">
+							Mechanical Bull
+						</option>
+						<option value="Songs About Jane">
+							Songs About Jane
+						</option>
+						<option value="Teenage Dream">
+							Teenage Dream
+						</option>
+					</select>
+			</article>
+			<div id="left-genres">
+				Genre:
+					<form method="post">
+	                        <input type="checkbox" name="genre" value="Rock" />Rock <br />
+	                        <input type="checkbox" name="genre" value="Pop" />Pop<br />
+	                        <input type="checkbox" name="genre" value="Blues" />Blues<br />
+	</form>
+			</div>
+			<div id="right-genres">
+					<form method="post">
+	                        <input type="checkbox" name="genre" value="Classical" />Classical <br />
+	                        <input type="checkbox" name="genre" value="Jazz" />Jazz<br />
+	                        <input type="checkbox" name="genre" value="Hip Hop" />Hip Hop<br />
+	                        <input type="submit" value="Filter"/>
+	</form>
+			</div>
+		</section>
+
+		<section class="songs">
+		<div id="songInfo">
+<!-- 			<div>
+			  <h3 class="song-title">Gypsy</h3>
+			  <p>Lady Gaga | Artpop | Pop</p>
+			</div>
+			<div>
+			  <h3 class="song-title">Strings</h3>
+			  <p>Young the Giant | Young the Giant | Pop</p>
+			</div>
+			<div>
+			  <h3 class="song-title">Beautiful War</h3>
+			  <p>Kings of Leon | Mechanical Bull | Rock</p>
+			</div>
+			<div>
+			  <h3 class="song-title">She Will Be Loved</h3>
+			  <p>Maroon 5 | Songs About Jane | Pop</p>
+			</div> -->
 		</div>
-		<div>
-		  <h3>Strings</h3>
-		  <p>Young the Giant | Young the Giant | Pop</p>
-		</div>
-		<div>
-		  <h3>Beautiful War</h3>
-		  <p>Kings of Leon | Mechanical Bull | Rock</p>
-		</div>
-		<div>
-		  <h3>She Will Be Loved</h3>
-		  <p>Maroon 5 | Songs About Jane | Pop</p>
-		</div>
+		</section>
 	</div>
 	</section>
 
+
+
+
+
+
+	<!-- add music view / form -->
+	<section class="hidden" id="add-view">
+		<p>Song title: <input type="text" id="song-title"></p>
+		<p>Artist: <input type="text" id="artist"></p>
+		<p>Album: <input type="text" id="album"></p>
+		<input type="submit" id="button" value="Add"></input>
+	</section>
+
+
+
+
+
+
+	<!-- profile view // blank for now -->
+	<section class="hidden" id="profile-view">
+	Profile
+	</section>
+
+<!-- songs.js is the list view / home page for now -->
+<script type="text/javascript" src="songs.js"></script>
+<script type="text/javascript" src="add-music.js"></script>
+
 </body>
 </html>
+
+
+
+
+
+
+
+
+
