@@ -21,65 +21,51 @@ addLink.addEventListener("click", function() {
 
 // Once the user fills out the song form and clicks the add button, you should collect all values from the input fields, add the song to your array of songs, and update the song list in the DOM.
 
-  // <section class="hidden" id="add-view">
-  //   <p>Song title: <input type="text" id="song-title"></p>
-  //   <p>Artist: <input type="text" id="artist"></p>
-  //   <p>Album: <input type="text" id="album"></p>
-  //   <input type="submit" id="button" value="Add"></input>
-  // </section>
-
-// var songTitle = document.getElementById("song-title");
-// var artist = document.getElementById("artist");
-// var album = document.getElementById("album");
-
-// // EXECUTE
-// var button = document.getElementById("button");
-
-// button.addEventListener("click", checkAddSongForm);
+// Must add each string to the DOM in index.html in the main content area.
 
 
-// function checkAddSongForm(){
-//   if(!songTitle.value && !artist.value && !album.value){
-//     alert("Please enter all data.");
-// } else if(!songTitle.value){
-//     alert("Please enter song title.");
-// } else if(!artist.value){
-//     alert("Please enter artist name.");
-// } else if(!album.value){
-//     alert("Please enter album name.");
-// } else {
-// // build new string from input fields
-// // push new string into songs array
-//     // songs.push(songTitle.value + artist.value + album.value);
-//   var newSong = "";
-//     newSong += songTitle.value + " ";
-//     newSong += artist.value + " ";
-//     newSong += album.value;
+var songTitle = document.getElementById("song-title");
+var artist = document.getElementById("artist");
+var album = document.getElementById("album");
+
+// EXECUTE
+var button = document.getElementById("button");
+
+function checkAddSongForm(){
+  if(!songTitle.value && !artist.value && !album.value){
+    alert("Please enter all data.");
+} else if(!songTitle.value){
+    alert("Please enter song title.");
+} else if(!artist.value){
+    alert("Please enter artist name.");
+} else if(!album.value){
+    alert("Please enter album name.");
+} else {
+// build new string from input fields
+// push new string into songs array
+
+  var newSong = "";
+    newSong += songTitle.value + " - by ";
+    newSong += artist.value + " on the album ";
+    newSong += album.value;
 
 // console.log(songTitle.value + " " + artist.value + " " +album.value);
 
+  console.log(newSong);
+  // console.log(checkAddSongForm);
 
-//   // var newSong = {}
-//   // newSong.songTitle = songTitle.value;
-//   // newSong.artist = artist.value;
-//   // newSong.album = album.value;
+  songs.push(newSong)
+  }
+console.log(songs);
+addToDom();
+}
 
-//   // printNewSong(newSong);
-//   console.log(newSong);
-//   console.log(checkAddSongForm);
-//   songs.push(newSong);
-//   }
-// }
+function addToDom(){
+  songInfo.innerHTML = songs;
+};
+addToDom();
 
-// checkAddSongForm();
-
-// console.log(songs);
-
-
-
-
-// // adds songs to end of array
-// // songs.push(newSong);
+button.addEventListener("click", checkAddSongForm);
 
 
 

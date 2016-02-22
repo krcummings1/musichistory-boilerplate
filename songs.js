@@ -21,10 +21,6 @@ listLink.addEventListener("click", function() {
 });
 
 
-
-// var version2Songs = document.getElementById("songInfo").innerHTML = "";
-
-
 var songs = [];
 
 songs[songs.length] = "Legs > by Z*ZTop on the album Eliminator";
@@ -59,54 +55,6 @@ console.log(songs[i]);
 
 replaceWords(songs);
 
-
-// Must add each string to the DOM in index.html in the main content area.
-
-
-var songTitle = document.getElementById("song-title");
-var artist = document.getElementById("artist");
-var album = document.getElementById("album");
-
-// EXECUTE
-var button = document.getElementById("button");
-
-
-
-function checkAddSongForm(){
-  if(!songTitle.value && !artist.value && !album.value){
-    alert("Please enter all data.");
-} else if(!songTitle.value){
-    alert("Please enter song title.");
-} else if(!artist.value){
-    alert("Please enter artist name.");
-} else if(!album.value){
-    alert("Please enter album name.");
-} else {
-// build new string from input fields
-// push new string into songs array
-
-  var newSong = "";
-    newSong += songTitle.value + " - by ";
-    newSong += artist.value + " on the album ";
-    newSong += album.value;
-
-// console.log(songTitle.value + " " + artist.value + " " +album.value);
-
-  console.log(newSong);
-  // console.log(checkAddSongForm);
-
-  songs.push(newSong)
-  }
-console.log(songs);
-addToDom();
-}
-
-function addToDom(){
-  songInfo.innerHTML = songs;
-};
-addToDom();
-
-button.addEventListener("click", checkAddSongForm);
 
 
 
