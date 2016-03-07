@@ -1,0 +1,76 @@
+.container {
+  width: 90%; }
+
+.nav {
+  border: 1.5px solid black;
+  background-color: #ffb4b0;
+  /*margin: 20px 70px 0 70px;*/
+  height: 35px;
+  font-family: "Arial";
+  font-size: 11px; }
+
+.nav > li {
+  float: left;
+  list-style-type: none;
+  margin: 10px 50px 0 10px;
+  font-family: "Arial";
+  cursor: pointer;
+  /*    padding-right: 10px;
+    border-right: 5px;*/ }
+
+.link--listmusic {
+  padding-right: 10px;
+  border-right: 5px;
+  border-color: solid black; }
+
+.link--profile {
+  padding-left: 10px;
+  border-left: 5px;
+  border-color: solid black; }
+
+.visible {
+  display: block; }
+
+.hidden {
+  display: none; }
+
+.bluebox {
+  border: 1.5px solid black;
+  background-color: #4DD7FA;
+  font-family: "Arial";
+  font-size: 11px;
+  height: 250px;
+  width: 140px;
+  float: left;
+  display: inline;
+  margin: 10px 5px 0px 70px; }
+
+.left-genres {
+  float: left;
+  width: 50%; }
+
+.right-genres {
+  float: left;
+  width: 50%; }
+
+#song-info {
+  border: 1.5px solid black;
+  background-color: #FEFAC0;
+  float: left;
+  /*height: 250px;*/
+  width: 70%;
+  display: inline;
+  /*margin: 10px auto 0px 5px;*/
+  padding: 5px 20px;
+  font-size: 14px;
+  font-family: "Arial"; }
+
+.song-title {
+  color: #785616;
+  font-size: 1.3em; }
+
+#song-info p {
+  margin: 5px auto; }
+
+#song {
+  padding: 5px 0px; }

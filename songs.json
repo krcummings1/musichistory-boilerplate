@@ -1,0 +1,34 @@
+{
+  "songs": [
+    {
+      "title": "Daisy",
+      "artist": "Goodbye June",
+      "album": "Daisy",
+      "genre": "Rock"
+    }, 
+    {
+      "title": "I Miss You",
+      "artist": "Adele",
+      "album": "25",
+      "genre": "Pop"
+    },  
+    {
+      "title": "Wildest Dreams",
+      "artist": "Taylor Swift",
+      "album": "1989",
+      "genre": "Pop"
+    },
+    {
+      "title": "Never Gonna Leave This Bed",
+      "artist": "Maroon 5",
+      "album": "Hands All Over",
+      "genre": "Pop"
+    },
+    {
+      "title": "Monster",
+      "artist": "Mumford & Sons",
+      "album": "Wilder Mind",
+      "genre": "Alternative Rock"
+    }
+  ]
+}
