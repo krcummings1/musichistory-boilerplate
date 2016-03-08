@@ -1,4 +1,7 @@
-$awesome-color: #ffb4b0;
+$navbar-color: #ffb4b0;
+$song-form-color: #4DD7FA;
+$song-info-color: #FEFAC0;
+$song-title-color: #785616;
 
 .container {
     width: 90%;
@@ -7,23 +10,24 @@ $awesome-color: #ffb4b0;
 .nav {
 
     border: 1.5px solid black;
-    background-color: $awesome-color;
+    background-color: $navbar-color;
     /*margin: 20px 70px 0 70px;*/
     height: 35px;
     font-family: "Arial";
     font-size: 11px;
 
+    li {
+        float: left;
+        list-style-type: none;
+        margin: 10px 50px 0 10px;
+        font-family: "Arial";
+        cursor: pointer;
+    /*    padding-right: 10px;
+        border-right: 5px;*/
+    }
+
 }
 
-.nav > li {
-    float: left;
-    list-style-type: none;
-    margin: 10px 50px 0 10px;
-    font-family: "Arial";
-    cursor: pointer;
-/*    padding-right: 10px;
-    border-right: 5px;*/
-}
 
 .link--listmusic {
     padding-right: 10px;
@@ -47,7 +51,7 @@ $awesome-color: #ffb4b0;
 
 .bluebox {
     border: 1.5px solid black;
-    background-color: #4DD7FA;
+    background-color: $song-form-color;
     font-family: "Arial";
     font-size: 11px;
     height: 250px;
@@ -69,7 +73,7 @@ $awesome-color: #ffb4b0;
 
 #song-info {
     border: 1.5px solid black;
-    background-color: #FEFAC0;
+    background-color: $song-info-color;
     float: left;
     /*height: 250px;*/
     width: 70%;
@@ -79,15 +83,15 @@ $awesome-color: #ffb4b0;
     font-size: 14px;
     font-family: "Arial";
 
+    p {
+        margin: 5px auto;    
+    }
+
 }
 
 .song-title {
-    color: #785616;
+    color: $song-title-color;
     font-size: 1.3em;
-}
-
-#song-info p {
-    margin: 5px auto;    
 }
 
 #song {

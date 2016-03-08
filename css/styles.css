@@ -8,15 +8,14 @@
   height: 35px;
   font-family: "Arial";
   font-size: 11px; }
-
-.nav > li {
-  float: left;
-  list-style-type: none;
-  margin: 10px 50px 0 10px;
-  font-family: "Arial";
-  cursor: pointer;
-  /*    padding-right: 10px;
-    border-right: 5px;*/ }
+  .nav li {
+    float: left;
+    list-style-type: none;
+    margin: 10px 50px 0 10px;
+    font-family: "Arial";
+    cursor: pointer;
+    /*    padding-right: 10px;
+        border-right: 5px;*/ }
 
 .link--listmusic {
   padding-right: 10px;
@@ -64,13 +63,12 @@
   padding: 5px 20px;
   font-size: 14px;
   font-family: "Arial"; }
+  #song-info p {
+    margin: 5px auto; }
 
 .song-title {
   color: #785616;
   font-size: 1.3em; }
-
-#song-info p {
-  margin: 5px auto; }
 
 #song {
   padding: 5px 0px; }
