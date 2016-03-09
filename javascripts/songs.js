@@ -16,99 +16,74 @@ listLink.addEventListener("click", function() {
 
 });
 
-var SongListBuilder = function () {
-  var songs = [];
 
-  return {
-    loadSongs: function () {
-      console.log("loading songs");
-      var songLoader = new XMLHttpRequest();
-      songLoader.open("GET", "songs.json");
-      songLoader.send();
-      songLoader.addEventListener("load", function(){
-        privateSongs = JSON.parse(this.responseText).songs;
-        console.log("songs", privateSongs);
+function getSongs () {
+  $("#song-info").empty();
+  $.ajax({
+    url: "https://music-history-kaylee.firebaseio.com/songs.json",
+    method: "GET"
+  }).done(function (songs) {
+    let songEl = $("#song-info");
+    console.log("songs", songs);
+    // for in iterates over an object's keys // songs is object
+    for (let song in songs) {
+    var outputString = "";
+      var currentSong = songs[song];
 
-        outputSongs(privateSongs);
+      // currentSong.title
+      // currentSong.artist
+      // currentSong.album
+
+      outputString += `<div id="${song} singleSong"><p class="song-title">${currentSong.title} </p>`;
+      outputString += `<p>${currentSong.artist}   |`;
+      outputString += `   ${currentSong.album}   |`;
+      outputString += `   ${currentSong.genre}</p>`;
+      outputString += `  <button class="delete-song" id="delete-song--${song}">Delete</button>`;
+      outputString += `</div>`;
+
+      songEl.append(outputString);
+
+      $(`#delete-song--${song}`).click(function(){
+        $.ajax({
+          url: `https://music-history-kaylee.firebaseio.com/songs/${song}.json`,
+          method: "DELETE"
+        }).done(function(){
+          getSongs();
+        })
+      // $(event.target).parents("#singleSong").remove();
 
       });
     }
-  }
-}();
 
 
+    console.log("currentSong", currentSong);
+  })
+}
 
 
+getSongs();
 
+/*
+CODE ABOVE REPLACED CODE BELOW
+*/
 
+// var SongListBuilder = function () {
+//   var songs = [];
 
+//   return {
+//     loadSongs: function () {
+//       console.log("loading songs");
+//       var songLoader = new XMLHttpRequest();
+//       songLoader.open("GET", "songs.json");
+//       songLoader.send();
+//       songLoader.addEventListener("load", function(){
+//         privateSongs = JSON.parse(this.responseText).songs;
+//         console.log("songs", privateSongs);
 
+//         outputSongs(privateSongs);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// OLD MUSIC HISTORY SONGS //
-
-// var songs = [];
-
-// songs[songs.length] = "Legs > by Z*ZTop on the album Eliminator";
-// songs[songs.length] = "The Logical Song > by Supertr@amp on the album Breakfast in America";
-// songs[songs.length] = "Another Brick in the Wall > by Pink Floyd on the album The Wall";
-// songs[songs.length] = "Welco(me to the Jungle > by Guns & Roses on the album Appetite for Destruction";
-// songs[songs.length] = "Ironi!c > by Alanis Moris*ette on the album Jagged Little Pill";
-
-
-// Each student must add one song to the beginning and the end of the array.
-
-// adds songs to end of array
-// songs.push("Teenage Dream - by Katy Perry on the album Teenage Dream");
-// // adds song to beginning of array
-// songs.unshift("The Night We Met by Lord Huron on the album Strange Trails");
-
-// Loop over the array and remove any words or characters that obviously don't belong.
-// Students must find and replace the > character in each item with a - character.
-
-// function replaceWords(){
-// for (var i=0; i < songs.length; i++) {
-//   songs[i] = songs[i].replace(/\>/g, "-");
-//   songs[i] = songs[i].replace(/\*/g, "");
-//   songs[i] = songs[i].replace(/\(/g, "");
-//   songs[i] = songs[i].replace(/\!/g, "");
-//   songs[i] = songs[i].replace(/\@/g, "");
-
-// console.log(songs[i]);
-
-// }
-// };
-
-// replaceWords(songs);
-
-
-
-
-
-
-
-
-
-
-
+//       });
+//     }
+//   }
+// }();
 

@@ -1,0 +1,18 @@
+{
+  "name": "musichistory",
+  "homepage": "https://github.com/krcummings1/musichistory-boilerplate",
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "jquery": "^2.2.1"
+  }
+}

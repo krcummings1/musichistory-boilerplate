@@ -21,6 +21,73 @@ addLink.addEventListener("click", function() {
 
 });
 
+// var addLink = $("#link-add");
+// var addView = $("#add-view");
+// var listLink = $("#link-list");
+// var listView = $("#list-view");
+// var profileLink = $("#link-profile");
+// var profileView = $("#profile-view");
+
+// $("#link-add").on("click", function() {
+//   listView.addClass("hidden");
+//   profileView.addClass("hidden");
+
+//   addView.addClass("visible");
+//   addView.addClass("hidden");
+
+// });
+
+$("#button").click(function(e) {
+
+  var newSong = {
+    "title": $("#song-title").val(),
+    "artist": $("#artist").val(),
+    "album": $("#album").val(),
+    "genre": $("#genre").val()
+  };
+  console.log("newSong", newSong);
+
+  var outputString = "";
+
+  $.ajax({
+    url: "https://music-history-kaylee.firebaseio.com/songs.json",
+    method: "POST",
+    data: JSON.stringify(newSong)
+  }).done(function(addedSong) {
+    console.log("Your new song is", addedSong);
+
+    outputString += `<div id="${newSong.title} singleSong"><p class="song-title">${newSong.title} </p>`;
+    outputString += `<p>${newSong.artist}   |`;
+    outputString += `   ${newSong.album}   |`;
+    outputString += `   ${newSong.genre}</p>`;
+    outputString += `  <button class="delete-song" id="delete-song--${newSong.title}">Delete</button>`;
+    outputString += `</div>`;
+
+    let songEl = $("#song-info");
+    songEl.append(outputString);
+     
+    // refreshes DOM with firebase info so I can immediately delete song just added without refreshing page 
+    $.ajax({
+      url: "https://music-history-kaylee.firebaseio.com/songs.json",
+      method: "GET"
+    }).done(function(){
+      getSongs();
+    })
+
+  // clears input values when add button is clicked
+   $("#song-title").val("");
+   $("#artist").val("");
+   $("#album").val("");
+   $("#genre").val("");
+  
+
+  }); // closing function(addedSong) 
+}); // closing add button event listener function
+
+
+
+
+
 // Once the user fills out the song form and clicks the add button, you should collect all values from the input fields, add the song to your array of songs, and update the song list in the DOM.
 
 // Must add each string to the DOM in index.html in the main content area.
@@ -68,7 +135,6 @@ addLink.addEventListener("click", function() {
 // // addToDom();
 
 // // button.addEventListener("click", checkAddSongForm);
-
 
 
 
