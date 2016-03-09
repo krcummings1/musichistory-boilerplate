@@ -4,13 +4,14 @@
 <head>
   <meta charset="utf-8">
   <title>Music History</title>
-  	 	<link rel="stylesheet" href="css/styles.css">
+	 	<link rel="stylesheet" href="css/styles.css">
+	 	<script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
 </head>
 
 <body>
 	<div id="container">
 	<!-- navigation -->
-		<nav>
+		<nav id="navbar" class="hidden">
 			<ul class="nav">	
 				<li class="link--listmusic">
 					<a href="#" id="list-music-link">
@@ -27,14 +28,28 @@
 					Profile
 					</a>
 				</li>
+				<li class="link--log-out">
+					<a href="#" id="log-out-link">
+					Log Out
+					</a>
+				</li>
 			</ul>	
 		</nav>
 
 
+<!-- login section / initial view -->
+
+	<section id="login-screen-view">
+		<p>Please log in to view Music History.</p>
+		<p>Email: <input type="text" id="email"></p>
+		<p>Password: <input type="password" id="password"></p>
+		<input type="submit" id="register-button" value="Register"></input>
+		<input type="submit" id="login-button" value="Login"></input>
+	</section>
 
 
-<!-- list music view / main page -->
-	<section id="list-music-view">
+<!-- list music view -->
+	<section id="list-music-view" class="hidden">
 		<section class="bluebox">
 			<article>
 				Song length:
@@ -139,6 +154,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
 <!-- songs.js is the list view / home page for now -->
+<script src="javascripts/login.js"></script>
 <script src="javascripts/songs.js"></script>
 <script src="javascripts/add-music.js"></script>
 

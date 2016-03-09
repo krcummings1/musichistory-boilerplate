@@ -1,4 +1,4 @@
-"use strict"; //hey
+"use strict";
 
 $("#list-music-link").on("click", function() {
   $("#add-music-view").addClass("hidden");
