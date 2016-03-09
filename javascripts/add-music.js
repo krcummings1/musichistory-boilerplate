@@ -9,14 +9,17 @@ $("#add-music-link").on("click", function() {
 });
 
 
-$("#button").click(function(e) {
+$("#add-button").click(function(e) {
   var newSong = {
+    // .val() takes value from input ids
+    // makes newSong.title = whatever song title was typed in the input
     "title": $("#song-title").val(),
     "artist": $("#artist").val(),
     "album": $("#album").val(),
     "genre": $("#genre").val()
   };
   console.log("newSong", newSong);
+  console.log("new song title", newSong.title);
 
   var outputString = "";
 
@@ -27,6 +30,7 @@ $("#button").click(function(e) {
   }).done(function(addedSong) {
     console.log("Your new song is", addedSong);
 
+    // id="${newSong.title}" gives newly added song a unique ID
     outputString += `<div id="${newSong.title} singleSong"><p class="song-title">${newSong.title} </p>`;
     outputString += `<p>${newSong.artist}   |`;
     outputString += `   ${newSong.album}   |`;
@@ -40,8 +44,10 @@ $("#button").click(function(e) {
     // refreshes DOM with firebase info so I can immediately delete song just added without refreshing page 
     $.ajax({
       url: "https://music-history-kaylee.firebaseio.com/songs.json",
+      // GET is getting the updated song list from firebase to put it in the DOM
       method: "GET"
     }).done(function(){
+      // after I've received updated song list from firebase, getSongs(); is refreshing DOM to be identical to the data that's in firebase
       getSongs();
     })
 
@@ -54,6 +60,10 @@ $("#button").click(function(e) {
 
   }); // closing function(addedSong) 
 }); // closing add button event listener function
+
+
+
+
 
 
 
