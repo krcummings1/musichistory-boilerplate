@@ -1,14 +1,13 @@
 "use strict";
 
-$("#link-add").on("click", function() {
-  $("#list-view").addClass("hidden");
+$("#add-music-link").on("click", function() {
+  $("#list-music-view").addClass("hidden");
   $("#profile-view").addClass("hidden");
 
-  $("#add-view").addClass("visible");
-  $("#add-view").removeClass("hidden");
+  $("#add-music-view").addClass("visible");
+  $("#add-music-view").removeClass("hidden");
 });
 
-// converted links to jquery
 
 $("#button").click(function(e) {
   var newSong = {
@@ -31,8 +30,8 @@ $("#button").click(function(e) {
     outputString += `<div id="${newSong.title} singleSong"><p class="song-title">${newSong.title} </p>`;
     outputString += `<p>${newSong.artist}   |`;
     outputString += `   ${newSong.album}   |`;
-    outputString += `   ${newSong.genre}</p>`;
-    outputString += `  <button class="delete-song" id="delete-song--${newSong.title}">Delete</button>`;
+    outputString += `   ${newSong.genre}`;
+    outputString += `  <button class="delete-song" id="delete-song--${newSong.title}">Delete</button></p>`;
     outputString += `</div>`;
 
     let songEl = $("#song-info");

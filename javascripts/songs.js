@@ -1,11 +1,11 @@
 "use strict"; //hey
 
-$("#link-list").on("click", function() {
-  $("#add-view").addClass("hidden");
+$("#list-music-link").on("click", function() {
+  $("#add-music-view").addClass("hidden");
   $("#profile-view").addClass("hidden");
 
-  $("#list-view").addClass("visible");
-  $("#list-view").removeClass("hidden");
+  $("#list-music-view").addClass("visible");
+  $("#list-music-view").removeClass("hidden");
 });
 
 function getSongs () {
@@ -28,8 +28,8 @@ function getSongs () {
       outputString += `<div id="${song} singleSong"><p class="song-title">${currentSong.title} </p>`;
       outputString += `<p>${currentSong.artist}   |`;
       outputString += `   ${currentSong.album}   |`;
-      outputString += `   ${currentSong.genre}</p>`;
-      outputString += `  <button class="delete-song" id="delete-song--${song}">Delete</button>`;
+      outputString += `   ${currentSong.genre}`;
+      outputString += `  <button class="delete-song" id="delete-song--${song}">Delete</button></p>`;
       outputString += `</div>`;
 
       songEl.append(outputString);
