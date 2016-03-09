@@ -8,6 +8,8 @@ $("#link-add").on("click", function() {
   $("#add-view").removeClass("hidden");
 });
 
+// converted links to jquery
+
 $("#button").click(function(e) {
   var newSong = {
     "title": $("#song-title").val(),
