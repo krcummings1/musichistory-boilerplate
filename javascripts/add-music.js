@@ -1,44 +1,14 @@
 "use strict";
 
-// var addLink is linking to the "link-add" id in the navigation link
-var addLink = document.getElementById("link-add");
-// var addView is linking to the "add-view" id in the add music section
-var addView = document.getElementById("add-view");
+$("#link-add").on("click", function() {
+  $("#list-view").addClass("hidden");
+  $("#profile-view").addClass("hidden");
 
-// connecting to the link ids
-var listLink = document.getElementById("link-list");
-var listView = document.getElementById("list-view");
-// connecting to the profile ids
-var profileLink = document.getElementById("link-profile");
-var profileView = document.getElementById("profile-view");
-
-addLink.addEventListener("click", function() {
-  listView.classList.add("hidden");
-  profileView.classList.add("hidden");
-
-  addView.classList.add("visible");
-  addView.classList.remove("hidden");
-
+  $("#add-view").addClass("visible");
+  $("#add-view").removeClass("hidden");
 });
 
-// var addLink = $("#link-add");
-// var addView = $("#add-view");
-// var listLink = $("#link-list");
-// var listView = $("#list-view");
-// var profileLink = $("#link-profile");
-// var profileView = $("#profile-view");
-
-// $("#link-add").on("click", function() {
-//   listView.addClass("hidden");
-//   profileView.addClass("hidden");
-
-//   addView.addClass("visible");
-//   addView.addClass("hidden");
-
-// });
-
 $("#button").click(function(e) {
-
   var newSong = {
     "title": $("#song-title").val(),
     "artist": $("#artist").val(),

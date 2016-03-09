@@ -1,21 +1,12 @@
 "use strict";
 
-var listLink = document.getElementById("link-list");
-var listView = document.getElementById("list-view");
-var addLink = document.getElementById("link-add");
-var addView = document.getElementById("add-view");
-var profileLink = document.getElementById("link-profile");
-var profileView = document.getElementById("profile-view");
+$("#link-list").on("click", function() {
+  $("#add-view").addClass("hidden");
+  $("#profile-view").addClass("hidden");
 
-listLink.addEventListener("click", function() {
-  addView.classList.add("hidden");
-  profileView.classList.add("hidden");
-
-  listView.classList.add("visible");
-  listView.classList.remove("hidden");
-
+  $("#list-view").addClass("visible");
+  $("#list-view").removeClass("hidden");
 });
-
 
 function getSongs () {
   $("#song-info").empty();
@@ -27,7 +18,7 @@ function getSongs () {
     console.log("songs", songs);
     // for in iterates over an object's keys // songs is object
     for (let song in songs) {
-    var outputString = "";
+      var outputString = "";
       var currentSong = songs[song];
 
       // currentSong.title
